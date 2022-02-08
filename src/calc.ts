@@ -81,4 +81,28 @@ function getCombination(n: number, r: number) {
     return a / (b * c)
 }
 
-console.log(getCombination(10, 3))
+// n進数から10進数: baseに元のn(2~10)を渡す、10進数を返す parseInt(String(num), n)
+function convToDecimal(num: bigint, n: number): bigint {
+    const N = BigInt(n)
+        let res = 0n
+        const listNum = String(num).split('')
+        for (let i = 1; i <= listNum.length; i++) {
+            const d = listNum[listNum.length - i]
+            res += BigInt(d) * (N ** BigInt(i - 1))
+        }
+    return res
+}
+
+// 10進数からn進数: n進数に変換したdecimalNumを返す decimalNum.toString(n)
+function convFromDecimal(num: bigint, n: number): bigint {
+    return BigInt(num.toString(n))
+    // const N = BigInt(n)
+    //     const res = []
+    //     while (num >= N) {
+    //         res.unshift(num % N)
+    //         num = num / N
+    //     }
+    //     res.unshift(num)
+    //     return BigInt(res.join(''))
+}
+
