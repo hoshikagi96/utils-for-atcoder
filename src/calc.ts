@@ -94,7 +94,7 @@ function getGCDOfAll(N: number, nums: number[]): number {
  * @param r number 並べる要素数
  * @returns number 組み合わせの数
  */
-function getPermutation(n: number, r: number) {
+function getPermutations(n: number, r: number) {
     let a = 1
     for (let i = 1; i <= n; i++) { a = a * i }
     let b = 1
@@ -109,7 +109,7 @@ function getPermutation(n: number, r: number) {
  * @param r number 選ぶ要素数
  * @returns number 組み合わせの数
  */
-function getCombination(n: number, r: number) {
+function getCombinations(n: number, r: number) {
     let a = 1
     for (let i = 1; i <= n; i++) { a = a * i }
     let b = 1
